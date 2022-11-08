@@ -10,7 +10,6 @@ public class VirtualBtnCtrl : MonoBehaviour
         vb = this.GetComponent<VirtualButtonBehaviour>();
         vb.RegisterOnButtonPressed(OnButtonPressed);
         vb.RegisterOnButtonReleased(OnButtonReleased);
-        Debug.Log("asd");
     }
 
     public void OnButtonPressed(VirtualButtonBehaviour vb){
