@@ -13,6 +13,6 @@ public class CameraCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.
+        //this.transform.
     }
 }
