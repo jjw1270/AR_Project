@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class Dots{  //가로 행
@@ -201,6 +202,67 @@ public class GameController : MonoBehaviour
     private void ShowPlayerPosAndLine(int[] tmpPlayerPos){
         //현재 플레이어의 위치 표시
         //현재 플레이어의 위치에서 나아갈 수 있는 선과 점 하이라이트
+
+///////////////////////////
+//지나갈 수 있는 경로 및 점 표시
+        //해당 점에서 라인
+        foreach(var line in array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line){
+            if(!line.gameObject.activeSelf) continue;
+            if(line.color.Equals(selectedColor)) continue;
+            line.color = highLightColor;
+        }
+        //갈 수 있는 점에서 라인
+        if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+            if(tmpPlayerPos[1] > 0){
+                if(tmpPlayerPos[0] > 0){
+                    array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].line[2].color = highLightColor;
+                }
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = highLightColor;
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].line[0].color = highLightColor;
+            }
+        }
+        else{    //홀수 행
+            if(tmpPlayerPos[1] > 0){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = highLightColor;
+            }
+            if(tmpPlayerPos[0] < 5){
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].line[0].color = highLightColor;
+            }
+            array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = highLightColor;
+        }        
+
+        //점 : 완료
+        if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+            if(tmpPlayerPos[1]<7){
+                if(tmpPlayerPos[0]>0){
+                    array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = true;
+                }
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = true;
+            }
+            if(tmpPlayerPos[1]>0){
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                if(tmpPlayerPos[0]>0){
+                    array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                }
+            }
+        }
+        else{    //홀수 행
+            array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+            if(tmpPlayerPos[1]<6){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+            }
+            if(tmpPlayerPos[0]<5){
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+                array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = true;
+            }
+            if(tmpPlayerPos[1]>0){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+            }
+            array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = true;
+        }
+
 ///////////////////////////
 //지나간 경로 및 점 표시
         if(playerPos != null){
@@ -263,6 +325,57 @@ public class GameController : MonoBehaviour
                     }
                 }
             }
+
+            //주변에 이미 선택된 점이 있으면 두 점사이를 연결
+            if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+                if(tmpPlayerPos[1]<7){
+                    if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
+                    }
+                    if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[1].color = selectedColor;
+                    }
+                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
+                    }
+                }
+                if(tmpPlayerPos[1]>0){
+                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.enabled){
+                        array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].line[0].color = selectedColor;
+                    }
+                    if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = selectedColor;
+                    }
+                    if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.enabled){
+                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].line[2].color = selectedColor;
+                    }
+                }
+            }
+            else{
+                if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.enabled){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
+                }
+                if(tmpPlayerPos[1]<6 && array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[1].color = selectedColor;
+                }
+                if(tmpPlayerPos[0]<5){
+                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
+                    }
+
+                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
+                        array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
+                    }
+                }
+                if(tmpPlayerPos[1]>0){
+                    if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
+                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = selectedColor;
+                    }
+                    if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
+                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
+                    }
+                }
+            }
         }
         playerPos = tmpPlayerPos;
         Debug.Log("선택한 점 : " + playerPos[0] + ", " + playerPos[1]);
@@ -271,85 +384,22 @@ public class GameController : MonoBehaviour
         Image thisDotImage = array[playerPos[0]].dot[playerPos[1]].dot.GetComponent<Image>();
         thisDotImage.sprite = selectedDot;
         thisDotImage.color = selectedColor;
-
-///////////////////////////    selectedColor일 시 X
-//지나갈 수 있는 경로 및 점 표시
-        //해당 점에서 라인
-        foreach(var line in array[playerPos[0]].dot[playerPos[1]].line){
-            if(!line.gameObject.activeSelf) continue;
-            if(line.color.Equals(selectedColor)) continue;
-
-            line.color = highLightColor;
-        }
-        //갈 수 있는 점에서 라인
-        if(playerPos[0] % 2 == 0 && playerPos[1] > 0){  //짝수 행
-            if(playerPos[0] > 0){
-                array[playerPos[0]-1].dot[playerPos[1]-1].line[2].color = highLightColor;
-            }
-            array[playerPos[0]].dot[playerPos[1]-1].line[1].color = highLightColor;
-            array[playerPos[0]+1].dot[playerPos[1]-1].line[0].color = highLightColor;
-        }
-        else{    //홀수 행
-            if(playerPos[1] > 0){
-                if(playerPos[0] < 5){
-                    array[playerPos[0]+1].dot[playerPos[1]].line[0].color = highLightColor;
-                }
-                array[playerPos[0]].dot[playerPos[1]-1].line[1].color = highLightColor;
-            }
-            array[playerPos[0]-1].dot[playerPos[1]].line[2].color = highLightColor;
-        }
-
-        //점
-        if(playerPos[0] % 2 == 0){  //짝수 행
-            if(playerPos[1]<1){
-                if(playerPos[0]>0){
-                    array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
-                }
-                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
-                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
-            }
-            else if(playerPos[1]>4){
-                if(playerPos[0]>0){
-                    array[playerPos[0]-1].dot[playerPos[1]-1].dot.interactable = true;
-                }
-                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
-                array[playerPos[0]+1].dot[playerPos[1]-1].dot.interactable = true;
-            }
-            else{
-                if(playerPos[0]>0){
-                    array[playerPos[0]-1].dot[playerPos[1]-1].dot.interactable = true;
-                    array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
-                }
-                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
-                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
-
-                array[playerPos[0]+1].dot[playerPos[1]-1].dot.interactable = true;
-                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
-            }
-        }
-        else{    //홀수 행
-            if(playerPos[0]<5){
-                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
-                array[playerPos[0]+1].dot[playerPos[1]+1].dot.interactable = true;
-            }
-            array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
-            array[playerPos[0]-1].dot[playerPos[1]+1].dot.interactable = true;
-
-            if(playerPos[1]<1){
-                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
-            }
-            else if(playerPos[1]>4){
-                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
-            }
-            else{
-                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
-                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
-            }
-        }
     }
 
     public void DotOnClick(){
-        int[] tmpPlayerPos = new int[] {   };
+        GameObject thisDot = EventSystem.current.currentSelectedGameObject;
+
+        int a = -99;
+        for(int i = 1; i <= 6; i++){
+            if(thisDot.transform.parent.name.Equals("Layout"+i)){
+                a = i-1;
+                break;
+            }
+        }
+
+        int b = thisDot.transform.GetSiblingIndex();
+Debug.Log(a + ", " + b);
+        int[] tmpPlayerPos = new int[] {a, b};
 
         ShowPlayerPosAndLine(tmpPlayerPos);
     }

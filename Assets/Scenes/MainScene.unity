@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1456,7 +1456,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 175185299}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &180801485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1592,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180801487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &201350631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2115,7 +2139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 226087679}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &227976269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2518,7 +2554,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247769141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &251413717
 Mesh:
   m_ObjectHideFlags: 0
@@ -2806,7 +2854,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 253875459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &261515256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3454,7 +3514,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 270696282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &299722520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,7 +4000,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 314868621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &320743343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4189,7 +4273,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 331677046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &333763538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5140,7 +5236,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 377711606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &389141508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6030,7 +6138,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 422293364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &433018927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6565,7 +6685,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 492307503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &495869478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7877,7 +8009,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 588704284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &592387698
 GameObject:
   m_ObjectHideFlags: 0
@@ -8001,7 +8145,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592387700}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &604267688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8267,7 +8423,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614534163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &631671182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8525,7 +8693,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 631988858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &648175712
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,7 +8829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 648175714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &658426290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9449,7 +9641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 704898404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &708968894
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,7 +9913,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 717744188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &718632465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10763,7 +10979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763039913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &772114753
 GameObject:
   m_ObjectHideFlags: 0
@@ -11022,7 +11250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 780573174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &780797336
 GameObject:
   m_ObjectHideFlags: 0
@@ -11604,7 +11844,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 811447516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &815633665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13089,7 +13341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 954381532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &956858704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14072,7 +14336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1017057169}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1021251228
 GameObject:
   m_ObjectHideFlags: 0
@@ -14272,7 +14548,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022366160}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1039684236
 GameObject:
   m_ObjectHideFlags: 0
@@ -14396,7 +14684,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1039684238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1042167668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15342,7 +15642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1071322531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1079385696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15603,7 +15915,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1082033054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1092824034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16432,7 +16756,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1124233971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1125693392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16987,7 +17323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1148391701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1167240663
 GameObject:
   m_ObjectHideFlags: 0
@@ -17111,7 +17459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1167240665}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1182340827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18419,7 +18779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1273390002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1277982588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18695,7 +19067,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1297520352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1297575040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19794,7 +20178,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1465411096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1475086278
 GameObject:
   m_ObjectHideFlags: 0
@@ -19918,7 +20314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1475086280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1479456441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20453,7 +20861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1516906329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1523280112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23451,7 +23871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1815837135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1834475373
 GameObject:
   m_ObjectHideFlags: 0
@@ -23575,7 +24007,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1834475375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1838022630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24188,7 +24632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1868563400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1872425151
 GameObject:
   m_ObjectHideFlags: 0
@@ -24312,7 +24768,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1872425153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1881691675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24573,7 +25041,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1902632513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1909620766
 GameObject:
   m_ObjectHideFlags: 0
@@ -24941,7 +25421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1926255035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1929090648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25683,7 +26175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1941228364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1958537465
 GameObject:
   m_ObjectHideFlags: 0
@@ -26163,7 +26667,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1981562010}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1995732349
 GameObject:
   m_ObjectHideFlags: 0
@@ -26287,7 +26803,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1995732351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1999556576
 GameObject:
   m_ObjectHideFlags: 0
@@ -27664,7 +28192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2055552391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2055815660
 GameObject:
   m_ObjectHideFlags: 0
@@ -27785,7 +28325,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2055815662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2062782928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28046,7 +28598,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2066054440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2073787443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28454,7 +29018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2077196134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114502042}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: DotOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2077603929
 GameObject:
   m_ObjectHideFlags: 0
