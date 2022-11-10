@@ -272,7 +272,7 @@ public class GameController : MonoBehaviour
         thisDotImage.sprite = selectedDot;
         thisDotImage.color = selectedColor;
 
-///////////////////////////미완
+///////////////////////////    selectedColor일 시 X
 //지나갈 수 있는 경로 및 점 표시
         //해당 점에서 라인
         foreach(var line in array[playerPos[0]].dot[playerPos[1]].line){
@@ -281,30 +281,71 @@ public class GameController : MonoBehaviour
 
             line.color = highLightColor;
         }
-
-
-
         //갈 수 있는 점에서 라인
-        // if(playerPos[0] % 2 == 0){  //짝수 행
-            
-        //     array[playerPos[0]+1].dot[playerPos[1]-1].line[0].color = highLightColor;
-        // }
-        // else{
-
-        // }
-
-
+        if(playerPos[0] % 2 == 0 && playerPos[1] > 0){  //짝수 행
+            if(playerPos[0] > 0){
+                array[playerPos[0]-1].dot[playerPos[1]-1].line[2].color = highLightColor;
+            }
+            array[playerPos[0]].dot[playerPos[1]-1].line[1].color = highLightColor;
+            array[playerPos[0]+1].dot[playerPos[1]-1].line[0].color = highLightColor;
+        }
+        else{    //홀수 행
+            if(playerPos[1] > 0){
+                if(playerPos[0] < 5){
+                    array[playerPos[0]+1].dot[playerPos[1]].line[0].color = highLightColor;
+                }
+                array[playerPos[0]].dot[playerPos[1]-1].line[1].color = highLightColor;
+            }
+            array[playerPos[0]-1].dot[playerPos[1]].line[2].color = highLightColor;
+        }
 
         //점
         if(playerPos[0] % 2 == 0){  //짝수 행
-            
-            
-        }
-        else{
+            if(playerPos[1]<1){
+                if(playerPos[0]>0){
+                    array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
+                }
+                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
+                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
+            }
+            else if(playerPos[1]>4){
+                if(playerPos[0]>0){
+                    array[playerPos[0]-1].dot[playerPos[1]-1].dot.interactable = true;
+                }
+                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
+                array[playerPos[0]+1].dot[playerPos[1]-1].dot.interactable = true;
+            }
+            else{
+                if(playerPos[0]>0){
+                    array[playerPos[0]-1].dot[playerPos[1]-1].dot.interactable = true;
+                    array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
+                }
+                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
+                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
 
+                array[playerPos[0]+1].dot[playerPos[1]-1].dot.interactable = true;
+                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
+            }
         }
+        else{    //홀수 행
+            if(playerPos[0]<5){
+                array[playerPos[0]+1].dot[playerPos[1]].dot.interactable = true;
+                array[playerPos[0]+1].dot[playerPos[1]+1].dot.interactable = true;
+            }
+            array[playerPos[0]-1].dot[playerPos[1]].dot.interactable = true;
+            array[playerPos[0]-1].dot[playerPos[1]+1].dot.interactable = true;
 
-        array[playerPos[0]].dot[playerPos[1]].dot.interactable = true;
+            if(playerPos[1]<1){
+                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
+            }
+            else if(playerPos[1]>4){
+                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
+            }
+            else{
+                array[playerPos[0]].dot[playerPos[1]-1].dot.interactable = true;
+                array[playerPos[0]].dot[playerPos[1]+1].dot.interactable = true;
+            }
+        }
     }
 
     public void DotOnClick(){
