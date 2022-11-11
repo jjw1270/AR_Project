@@ -299,9 +299,10 @@ GameObject:
   - component: {fileID: 7305585302061752363}
   - component: {fileID: 2564989440655031033}
   - component: {fileID: 2194673197218026936}
+  - component: {fileID: 520651369020274605}
   m_Layer: 5
   m_Name: Enemy_highDamage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +368,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &520651369020274605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5762683866515218701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97172cc86cf2b9847a65e314ff09349c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 60
+  damage: 40
+  hpTxt: {fileID: 1587183591773508970}
+  DamageTxt: {fileID: 6663765806100869370}
+  enemyType: 1
 --- !u!1 &8708959899172488242
 GameObject:
   m_ObjectHideFlags: 0

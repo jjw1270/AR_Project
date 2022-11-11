@@ -16399,6 +16399,8 @@ MonoBehaviour:
     type: 3}
   enemy_DecreasePlayerDamage: {fileID: 4433113791842931803, guid: bf8386d96255169408aee5d6ba6f5504,
     type: 3}
+  playerPos: 
+  enemy_target_Pos: 
 --- !u!1 &1120932458
 GameObject:
   m_ObjectHideFlags: 0
@@ -23046,7 +23048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1775914979}
-  - component: {fileID: 1775914978}
+  - component: {fileID: 1775914982}
   - component: {fileID: 1775914981}
   m_Layer: 0
   m_Name: GameManager
@@ -23055,19 +23057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1775914978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775914976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea2d0cb231e34e478a0ef29ead4ebd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToSpeech: {fileID: 1775914981}
 --- !u!4 &1775914979
 Transform:
   m_ObjectHideFlags: 0
@@ -23097,6 +23086,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ttsAudioSource: {fileID: 1204688043}
   ttsList: []
+--- !u!114 &1775914982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775914976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ea90e4f63ee6440ace73a7fad9ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMap: {fileID: 1114502042}
 --- !u!1001 &1782440284
 PrefabInstance:
   m_ObjectHideFlags: 0

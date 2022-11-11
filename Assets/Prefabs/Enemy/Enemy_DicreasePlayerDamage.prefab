@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8501241650303698420}
   - component: {fileID: 6747298699486045064}
   - component: {fileID: 495288400521961255}
+  - component: {fileID: -1213139861021604399}
   m_Layer: 5
   m_Name: Enemy_DicreasePlayerDamage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +80,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-1213139861021604399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433113791842931803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97172cc86cf2b9847a65e314ff09349c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 60
+  damage: 15
+  hpTxt: {fileID: 2382164586934604857}
+  DamageTxt: {fileID: 1151273935404797567}
+  enemyType: 3
 --- !u!1 &5971665230862789203
 GameObject:
   m_ObjectHideFlags: 0
