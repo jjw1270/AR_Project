@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class Dots{  //가로 행
@@ -18,6 +17,7 @@ public class GameMap : MonoBehaviour
     public Dots[] array = new Dots[6];
 
     [SerializeField]private Sprite selectedDot;
+    [SerializeField]private Color defaultLineColor;
     [SerializeField]private Color selectedColor;
     [SerializeField]private Color highLightColor;
 
@@ -30,15 +30,8 @@ public class GameMap : MonoBehaviour
     public int[] playerPos;
 
     public int[] enemy_target_Pos;
-    public List<int[]> enemy_default_pos = new List<int[]>();
-    public List<int[]> enemy_highDamage_pos = new List<int[]>();
-    public List<int[]> enemy_increaseEnemyHealth_pos = new List<int[]>();
-    public List<int[]> enemy_DecreasePlayerDamage_pos = new List<int[]>();
 
-    private int count_enemy_default = 0;
-    private int count_enemy_highDamage = 0;
-    private int count_enemy_increaseEnemyHealth = 0;
-    private int count_enemy_DecreasePlayerDamage = 0;
+    public List<EnemyInfo> currentSpawnEnemyList = new List<EnemyInfo>();
 
     public void CreateMap(){
         DisableRandomDots();
@@ -47,7 +40,7 @@ public class GameMap : MonoBehaviour
         SetTargetPoint();
         AddEnemys();
         AddItems();
-        AddRandomEnemyOrItem();
+        ShowPlayerPosAndLine(playerPos);
     }
     public void Reset(){
         
@@ -159,7 +152,8 @@ public class GameMap : MonoBehaviour
                 break;
         }
 
-        ShowPlayerPosAndLine(tmpPlayerPos);
+        playerPos = tmpPlayerPos;
+        Debug.Log("PlayerPOS : " + playerPos[0] + playerPos[1]);
     }
 
     private void SetTargetPoint(){
@@ -190,77 +184,71 @@ public class GameMap : MonoBehaviour
         //체력40 공격력 15(존재하는 동안 플레이어의 공격력이 15로 고정됨)
         //적은 최소 한 종류씩 모조건 생성, 최소 6개(enemy_default*2, enemy_highDamage*2), 최대 10개(테스트 후 수정 필요)
 
-        //적이 발견되면 적이 생성된 점을 둘러싼 선 접근 불가능 표시
+        //적이 발견되면 적이 생성된 점을 둘러싼 선과 점 접근 불가능 표시
         //적을 파괴하면 다시 원래상태로
 
         for(int i = 0; i < Random.Range(1,3);){  //enemy_DecreasePlayerDamage
             i++;
-            int[] tmpPos = new int[]{Random.Range(0,5), Random.Range(0, 7)};
+            int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
             if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
-                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 0)){
+                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 3)){
+                i--;
+                continue;
+            }
+
+            GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
+
+
+            GameObject spawned_enemy = Instantiate(enemy_DecreasePlayerDamage, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
+            spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
+        }
+        for(int i = 0; i < Random.Range(1,3);){  //enemy_increaseEnemyHealth
+            i++;
+            int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
+            if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
+                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 3)){
+                i--;
+                continue;
+            }
+
+            GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
+
+
+            GameObject spawned_enemy = Instantiate(enemy_increaseEnemyHealth, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
+            spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
+        }
+
+        for(int i = 0; i < Random.Range(3,5);){  //enemy_highDamage
+            i++;
+            int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
+            if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
+                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 3)){
                 i--;
                 continue;
             }
             
             GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
 
-            enemy_DecreasePlayerDamage_pos.Add(tmpPos);
-            count_enemy_DecreasePlayerDamage++;
-
-            GameObject spawned_enemy = Instantiate(enemy_DecreasePlayerDamage, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
-            spawned_enemy.SetActive(false);
-        }
-        for(int i = 0; i < Random.Range(1,3);){  //enemy_increaseEnemyHealth
-            i++;
-            int[] tmpPos = new int[]{Random.Range(0,5), Random.Range(0, 7)};
-            if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
-                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 0)){
-                i--;
-                continue;
-            }
-            GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
-
-            enemy_increaseEnemyHealth_pos.Add(tmpPos);
-            count_enemy_increaseEnemyHealth++;
-
-            GameObject spawned_enemy = Instantiate(enemy_increaseEnemyHealth, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
-            spawned_enemy.SetActive(false);
-        }
-
-        for(int i = 0; i < Random.Range(3,5);){  //enemy_highDamage
-            i++;
-            int[] tmpPos = new int[]{Random.Range(0,5), Random.Range(0, 7)};
-            if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
-                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 0)){
-                i--;
-                continue;
-            }
-            GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
-
-            enemy_highDamage_pos.Add(tmpPos);
-            count_enemy_highDamage++;
 
             GameObject spawned_enemy = Instantiate(enemy_highDamage, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
-            spawned_enemy.SetActive(false);
+            spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
         }
         for(int i = 0; i < Random.Range(3,5);){  //enemy_default
             i++;
-            int[] tmpPos = new int[]{Random.Range(0,5), Random.Range(0, 7)};
+            int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
             if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
-                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 0)){
+                tmpPos == playerPos || tmpPos == enemy_target_Pos || (array[tmpPos[0]].dot[tmpPos[1]].dot.transform.childCount > 3)){
                 i--;
                 continue;
             }
+
             GameObject enemyPoint = array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject;
 
-            enemy_default_pos.Add(tmpPos);
-            count_enemy_default++;
 
             GameObject spawned_enemy = Instantiate(enemy_default, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
-            spawned_enemy.SetActive(false);
+            spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
         }
 
-        Debug.Log("적 수 : " + enemy_default_pos.Count + enemy_highDamage_pos.Count + enemy_increaseEnemyHealth_pos.Count + enemy_DecreasePlayerDamage_pos.Count);
     }
 
     private void AddItems(){
@@ -270,14 +258,10 @@ public class GameMap : MonoBehaviour
 
     }
 
-    private void AddRandomEnemyOrItem(){
-        //해당 지역으로 이동 시 적 또는 아이템이 3:7의 확률로 생성됨
-        //총 수량 4개
-    }
-
-    private void ShowPlayerPosAndLine(int[] tmpPlayerPos){
+    public void ShowPlayerPosAndLine(int[] tmpPlayerPos){
         //현재 플레이어의 위치 표시
         //현재 플레이어의 위치에서 나아갈 수 있는 선과 점 하이라이트
+        //나아갈 수 있는 점에 적이 존재하면, 그 점의 적 활성화, 주변의 선에 못간다고 표시
 
 ///////////////////////////
 //지나갈 수 있는 경로 및 점 표시
@@ -308,87 +292,100 @@ public class GameMap : MonoBehaviour
         }
 
         //점
+        //지나갈 수 있는 점에 적이 있으면 적 활성화
+        //enemy Info 컴포넌트에서 -> Onenable시 해당 점을 둘러싼 선 색 원래대로.
         if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
             if(tmpPlayerPos[1]<7){
                 if(tmpPlayerPos[0]>0){
                     array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = true;
+                    ShowEnemyOrItem(new int[]{tmpPlayerPos[0]-1, tmpPlayerPos[1]});
                 }
                 array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0], tmpPlayerPos[1]+1});
                 array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0]+1, tmpPlayerPos[1]});
             }
             if(tmpPlayerPos[1]>0){
                 array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0]+1, tmpPlayerPos[1]-1});
                 array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0], tmpPlayerPos[1]-1});
                 if(tmpPlayerPos[0]>0){
                     array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                    ShowEnemyOrItem(new int[]{tmpPlayerPos[0]-1, tmpPlayerPos[1]-1});
                 }
             }
         }
         else{    //홀수 행
             array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+            ShowEnemyOrItem(new int[]{tmpPlayerPos[0]-1, tmpPlayerPos[1]+1});
             if(tmpPlayerPos[1]<6){
                 array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0], tmpPlayerPos[1]+1});
             }
             if(tmpPlayerPos[0]<5){
                 array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0]+1, tmpPlayerPos[1]+1});
                 array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0]+1, tmpPlayerPos[1]});
             }
             if(tmpPlayerPos[1]>0){
                 array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = true;
+                ShowEnemyOrItem(new int[]{tmpPlayerPos[0], tmpPlayerPos[1]-1});
             }
             array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = true;
+            ShowEnemyOrItem(new int[]{tmpPlayerPos[0]-1, tmpPlayerPos[1]});
         }
+
 
 ///////////////////////////
 //지나간 경로 및 점 표시
         //주변에 이미 선택된 점이 있으면 두 점사이를 연결
-        if(playerPos != null){
-            if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
-                if(tmpPlayerPos[1]<7){
-                    if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
-                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
-                    }
-                    if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
-                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[1].color = selectedColor;
-                    }
-                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
-                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
-                    }
-                }
-                if(tmpPlayerPos[1]>0){
-                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.enabled){
-                        array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].line[0].color = selectedColor;
-                    }
-                    if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
-                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = selectedColor;
-                    }
-                    if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.enabled){
-                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].line[2].color = selectedColor;
-                    }
-                }
-            }
-            else{
-                if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.enabled){
+        if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+            if(tmpPlayerPos[1]<7){
+                if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
                     array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
                 }
-                if(tmpPlayerPos[1]<6 && array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
+                if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
                     array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[1].color = selectedColor;
                 }
-                if(tmpPlayerPos[0]<5){
-                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.enabled){
-                        array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
-                    }
-
-                    if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
-                        array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
-                    }
+                if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
                 }
-                if(tmpPlayerPos[1]>0 && array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
+            }
+            if(tmpPlayerPos[1]>0){
+                if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.enabled){
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].line[0].color = selectedColor;
+                }
+                if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
                     array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = selectedColor;
                 }
-                if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
-                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
+                if(tmpPlayerPos[0]>0 && array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.enabled){
+                    array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].line[2].color = selectedColor;
                 }
+            }
+        }
+        else{
+            if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.enabled){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
+            }
+            if(tmpPlayerPos[1]<6 && array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.enabled){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[1].color = selectedColor;
+            }
+            if(tmpPlayerPos[0]<5){
+                if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.enabled){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
+                }
+
+                if(array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.enabled){
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].line[0].color = selectedColor;
+                }
+            }
+            if(tmpPlayerPos[1]>0 && array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.enabled){
+                array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = selectedColor;
+            }
+            if(array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.gameObject.activeSelf && !array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.enabled){
+                    array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = selectedColor;
             }
         }
 
@@ -397,38 +394,51 @@ public class GameMap : MonoBehaviour
         Image thisDotImage = array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].dot.GetComponent<Image>();
         thisDotImage.sprite = selectedDot;
         thisDotImage.color = selectedColor;
-
+       
+        
         playerPos = tmpPlayerPos;
         Debug.Log("선택한 점 : " + playerPos[0] + ", " + playerPos[1]);
     }
 
-    public void DotOnClick(){
-        GameObject thisDot = EventSystem.current.currentSelectedGameObject;
-
-        //해당 점이 비었을 때
-        int a = -99;
-        for(int i = 1; i <= 6; i++){
-            if(thisDot.transform.parent.name.Equals("Layout"+i)){
-                a = i-1;
-                break;
-            }
+    private void ShowEnemyOrItem(int[] tmpPlayerPos){
+        if(array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].dot.transform.childCount <= 3){
+            return;
         }
 
-        int b = thisDot.transform.GetSiblingIndex();
-        Debug.Log(a + ", " + b);
-        int[] tmpPlayerPos = new int[] {a, b};
+        GameObject addedObj = array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].dot.transform.GetChild(3).gameObject;
+        EnemyInfo thisEnemy = addedObj.transform.GetComponent<EnemyInfo>();
+        if(thisEnemy != null){
+            thisEnemy.gameObject.SetActive(true);
+            currentSpawnEnemyList.Add(thisEnemy);   ///////////////////////////////////
 
-        ShowPlayerPosAndLine(tmpPlayerPos);
-
-        //해당 점에 enemy가 존재할 때
-
-
-
-        //해당 점에 아이템이 존재할 때
-
-
-
-
-        //해당 점에 랜덤점이 존재할 때
+            foreach(var line in array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line){
+                line.color = defaultLineColor;
+            }
+            if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+                if(tmpPlayerPos[1] > 0){
+                    if(tmpPlayerPos[0] > 0){
+                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].line[2].color = defaultLineColor;
+                    }
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = defaultLineColor;
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].line[0].color = defaultLineColor;
+                }
+            }
+            else{    //홀수 행
+                if(tmpPlayerPos[1] > 0){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].line[1].color = defaultLineColor;
+                }
+                if(tmpPlayerPos[0] < 5){
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].line[0].color = defaultLineColor;
+                }
+                array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = defaultLineColor;
+            }
+            return;
+        }
+        else{
+            ItemInfo thisItem = addedObj.transform.GetComponent<ItemInfo>();
+            /////
+            return;
+        }
     }
+
 }

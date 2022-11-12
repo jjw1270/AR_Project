@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -1593,7 +1593,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -2555,7 +2555,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -4001,7 +4001,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -5237,7 +5237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -6139,7 +6139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -6686,7 +6686,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -8010,7 +8010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -8146,7 +8146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -8424,7 +8424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -8694,7 +8694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -8830,7 +8830,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -9642,7 +9642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -9914,7 +9914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -10980,7 +10980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -11251,7 +11251,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -11845,7 +11845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -13342,7 +13342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -14337,7 +14337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -14549,7 +14549,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -14685,7 +14685,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -15643,7 +15643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -15916,7 +15916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -16387,6 +16387,7 @@ MonoBehaviour:
     - dot: {fileID: 631988860}
       line: []
   selectedDot: {fileID: 21300000, guid: fe2f52fd8426c1143ad9c1daaced9f63, type: 3}
+  defaultLineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   selectedColor: {r: 0.8784314, g: 0.6400275, b: 0.21176468, a: 1}
   highLightColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   enemy_target: {fileID: 5698679745780640422, guid: ee07f948312432c4087e3b09fd851eb8,
@@ -16759,7 +16760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -17326,7 +17327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -17462,7 +17463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -18043,6 +18044,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218348875}
   m_CullTransparentMesh: 1
+--- !u!114 &1226459740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7785688892527133271, guid: 98fab3c49c7e47441a0b1cf442f6b727,
+    type: 3}
+  m_PrefabInstance: {fileID: 758428279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1232715247
 GameObject:
   m_ObjectHideFlags: 0
@@ -18782,7 +18795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -19070,7 +19083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -20181,7 +20194,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -20317,7 +20330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -20864,7 +20877,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -23099,6 +23112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMap: {fileID: 1114502042}
+  hpTxt: {fileID: 772114755}
+  DamageTxt: {fileID: 708968896}
+  hpBar: {fileID: 1226459740}
+  DamageBar: {fileID: 1872834936}
 --- !u!1001 &1782440284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23874,7 +23891,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -24010,7 +24027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -24635,7 +24652,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -24771,7 +24788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -24783,6 +24800,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1872834936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7785688892527133271, guid: 98fab3c49c7e47441a0b1cf442f6b727,
+    type: 3}
+  m_PrefabInstance: {fileID: 1802612504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1881691675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25044,7 +25073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -25424,7 +25453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -26178,7 +26207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -26670,7 +26699,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -26806,7 +26835,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -28195,7 +28224,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -28328,7 +28357,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -28601,7 +28630,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
@@ -29021,7 +29050,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114502042}
+      - m_Target: {fileID: 1775914982}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: DotOnClick
         m_Mode: 1
