@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
-    [SerializeField]GameMap gameMap;
+    public GameMap gameMap;
     private bool isGamePlayed;
 
     public enum enemy{

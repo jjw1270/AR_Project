@@ -22,9 +22,17 @@ public class EnemyInfo : MonoBehaviour
         hpTxt.text = hp.ToString();
     }
 
+    bool onshow;
     private void OnEnable() {
         if(enemyType == GameController.enemy.dicreasePlayerDamage){
             GameController.Instance.DicreasePlayerDamage(true);
+        }
+        if(!onshow){
+            onshow = true;
+        }
+        else{
+            GameController.Instance.gameMap.currentSpawnEnemyList.Add(this);
+            Debug.Log("Add list");
         }
     }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/*미완*/
 [System.Serializable]
 public class Dots{  //가로 행
     public DotInfo[] dot = new DotInfo[8];
@@ -218,7 +220,7 @@ public class GameMap : MonoBehaviour
             spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
         }
 
-        for(int i = 0; i < Random.Range(3,5);){  //enemy_highDamage
+        for(int i = 0; i < Random.Range(2,4);){  //enemy_highDamage
             i++;
             int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
             if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
@@ -233,7 +235,7 @@ public class GameMap : MonoBehaviour
             GameObject spawned_enemy = Instantiate(enemy_highDamage, (Vector2)enemyPoint.transform.position, Quaternion.identity, enemyPoint.transform);
             spawned_enemy.SetActive(false);Debug.Log("TMPPOS : " + tmpPos[0] + tmpPos[1]);
         }
-        for(int i = 0; i < Random.Range(3,5);){  //enemy_default
+        for(int i = 0; i < Random.Range(2,4);){  //enemy_default
             i++;
             int[] tmpPos = new int[]{Random.Range(0,6), Random.Range(0, 8)};
             if((tmpPos[0] % 2 != 0 && tmpPos[1] > 5) || !array[tmpPos[0]].dot[tmpPos[1]].dot.gameObject.activeSelf ||
@@ -293,7 +295,6 @@ public class GameMap : MonoBehaviour
 
         //점
         //지나갈 수 있는 점에 적이 있으면 적 활성화
-        //enemy Info 컴포넌트에서 -> Onenable시 해당 점을 둘러싼 선 색 원래대로.
         if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
             if(tmpPlayerPos[1]<7){
                 if(tmpPlayerPos[0]>0){
@@ -408,9 +409,10 @@ public class GameMap : MonoBehaviour
         GameObject addedObj = array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].dot.transform.GetChild(3).gameObject;
         EnemyInfo thisEnemy = addedObj.transform.GetComponent<EnemyInfo>();
         if(thisEnemy != null){
+            
             thisEnemy.gameObject.SetActive(true);
-            currentSpawnEnemyList.Add(thisEnemy);   ///////////////////////////////////
 
+            //선
             foreach(var line in array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]].line){
                 line.color = defaultLineColor;
             }
@@ -432,6 +434,42 @@ public class GameMap : MonoBehaviour
                 }
                 array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].line[2].color = defaultLineColor;
             }
+
+            //점
+            //적 반경 1칸은 playerpos 기준으로 라인 비활성화
+            if(tmpPlayerPos[0] % 2 == 0){  //짝수 행
+                if(tmpPlayerPos[1]<7){
+                    if(tmpPlayerPos[0]>0){
+                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = false;
+                    }
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = false;
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = false;
+                }
+                if(tmpPlayerPos[1]>0){
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]-1].dot.interactable = false;
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = false;
+                    if(tmpPlayerPos[0]>0){
+                        array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]-1].dot.interactable = false;
+                    }
+                }
+            }
+            else{    //홀수 행
+                array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]+1].dot.interactable = false;
+                if(tmpPlayerPos[1]<6){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]+1].dot.interactable = false;
+                }
+                if(tmpPlayerPos[0]<5){
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]+1].dot.interactable = false;
+                    array[tmpPlayerPos[0]+1].dot[tmpPlayerPos[1]].dot.interactable = false;
+                }
+                if(tmpPlayerPos[1]>0){
+                    array[tmpPlayerPos[0]].dot[tmpPlayerPos[1]-1].dot.interactable = false;
+                }
+                array[tmpPlayerPos[0]-1].dot[tmpPlayerPos[1]].dot.interactable = false;
+            }
+
+
+
             return;
         }
         else{
