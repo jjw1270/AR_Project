@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
     <Tracking>
-        <ImageTarget name="Wrist" size="1.000000 1.000000"/>
-        <ImageTarget name="Phone" size="1.000000 1.000000"/>
-        <ImageTarget name="Pc" size="1.000000 1.000000"/>
-        <ImageTarget name="Earphone" size="1.000000 1.000000"/>
-        <ImageTarget name="Door" size="1.000000 1.000000"/>
-        <ImageTarget name="Cube.Back" size="1.000000 1.000000"/>
-        <ImageTarget name="Cube.Top" size="1.000000 1.000000"/>
-        <ImageTarget name="Cube.Bottom" size="1.000000 1.000000"/>
+        <ImageTarget name="STT_Button" size="1.000000 1.000000"/>
+        <ImageTarget name="Card2" size="1.000000 0.647059"/>
+        <ImageTarget name="Card1" size="1.000000 0.647059"/>
         <ImageTarget name="Cube.Left" size="1.000000 1.000000"/>
-        <ImageTarget name="Cube.Front" size="1.000000 1.000000"/>
+        <ImageTarget name="Cube.Bottom" size="1.000000 1.000000"/>
         <ImageTarget name="Cube.Right" size="1.000000 1.000000"/>
+        <ImageTarget name="Cube.Front" size="1.000000 1.000000"/>
+        <ImageTarget name="Cube.Top" size="1.000000 1.000000"/>
+        <ImageTarget name="Cube.Back" size="1.000000 1.000000"/>
         <MultiTarget name="Cube">
             <Part name="Cube.Left" translation="-0.5 0 0" rotation="AD: 0 1 0 -90"/>
             <Part name="Cube.Right" translation="0.5 0 0" rotation="AD: 0 1 0 90"/>
