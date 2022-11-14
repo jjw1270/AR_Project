@@ -98,5 +98,6 @@ public class SpeechToText : MonoBehaviour
 
     private void ShowCommandList(){
         GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '어플 종료'";
+        resultText.text = "";
     }
 }

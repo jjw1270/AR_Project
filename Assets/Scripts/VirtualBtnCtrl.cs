@@ -14,6 +14,8 @@ public class VirtualBtnCtrl : MonoBehaviour
 
     public void OnButtonPressed(VirtualButtonBehaviour vb){
         Debug.Log(this.gameObject.name + " 버튼 눌림");
+        GameManager.Instance.Stt("게임 시작");
+        //GameManager.Instance.speechToText.StartRecording();
     }
 
     public void OnButtonReleased(VirtualButtonBehaviour vb){
