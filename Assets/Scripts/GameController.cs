@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
 
     public GameObject dice;
     private Rigidbody diceRb;
-    private float throwForce = 10f;
-    private float rotateForce = 90000f;
+    private float throwForce = 20f;
+    private float rotateForce = 900000f;
     [SerializeField]GetDiceNumber getDiceNumber;
     public bool isThrowingDice;
     [SerializeField]ParticleSystem diceParticle;
@@ -75,8 +75,8 @@ public class GameController : MonoBehaviour
         isThrowingDice = true;
         SoundManager.Instance.PlaySFXSound("Dice");
         Vector3 randomRotation = new Vector3(Random.Range(-1,1f), Random.Range(-1,1f), Random.Range(-1,1f));
-        diceRb.AddForce(Vector3.up * throwForce, ForceMode.Impulse);
-        diceRb.AddTorque(randomRotation * rotateForce * 1000, ForceMode.Impulse);
+        diceRb.AddForce(Vector3.up * (throwForce+Random.Range(-8f,8f)), ForceMode.Impulse);
+        diceRb.AddTorque(randomRotation * rotateForce * 10000, ForceMode.Impulse);
 
         StartCoroutine(DiceNumber());
     }
@@ -107,12 +107,16 @@ public class GameController : MonoBehaviour
 
         diceParticle.Play();
 
-        //0.2초 간격으로 공 이동
+        SoundManager.Instance.textToSpeech.PlayTTS(count.ToString());
         StartCoroutine(MoveSphere(thisCard, count, enemyCard, card1));
     }
 
     IEnumerator MoveSphere(Card thisCard, int count, Card enemyCard, bool card1){
         for(int i = 0; i < count; i++){
+            if(enemyCard.scoreList.Count<=0){
+                GetTotScore();
+                yield break;
+            }
             SphereInfo thisSphere =  enemyCard.scoreList[0].GetComponent<SphereInfo>();
 
             Vector3 halfPos = thisSphere.tf.position + ((thisCard.targetPos.position - thisSphere.tf.position)/2);
@@ -129,13 +133,9 @@ public class GameController : MonoBehaviour
             thisSphere.tf.parent = thisCard.score.transform;
             enemyCard.scoreList.RemoveAt(0);
 
-            // .text = card[0].scoreList.Count.ToString();
-            // .text = card[1].scoreList.Count.ToString();
-
             yield return new WaitForSeconds(0.4f);
         }
         GetTotScore();
-        
         yield break;
     }
     
@@ -176,9 +176,8 @@ public class GameController : MonoBehaviour
         Invoke("DisablePanel", disableSec);
         yield break;
     }
-    
 
-    public void DisablePanel(){
+    public void DisablePanel(){  //invoke
         isThrowingDice = false;
         turnCard1Panel.SetActive(false);
         turnCard2Panel.SetActive(false);

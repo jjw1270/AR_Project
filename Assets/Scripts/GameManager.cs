@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     public bool[] targetFoundList = new bool[3];
     public bool isAllTargetFound;
     bool isGameStart;
+    bool onMarkerDownload;
 
     private void Start() {
         StartCoroutine(ShowLogo());
@@ -29,12 +30,15 @@ public class GameManager : Singleton<GameManager>
         virtualBtnCtrl.ChangeBtnColor(false);
         switch(command){
             case "게임 설명":
+                onMarkerDownload = false;
                 if(!isGameStart)
                     SoundManager.Instance.textToSpeech.PlayTTS("GameInfo");
                 else
                     logText.text = "게임 도중 게임 설명을 들을 수 없습니다.";
+                    Invoke("HelpLogText", 2f);
                 break;
             case "게임 시작":
+                onMarkerDownload = false;
                 //모든 마커가 인식완료된 상태에서만 가능
                 if(isAllTargetFound){
                     if(!isGameStart){
@@ -68,11 +72,28 @@ public class GameManager : Singleton<GameManager>
                     logText.text = "게임을 시작해 주세요";
                     Invoke("HelpLogText", 2f);
                 }
-                
                 break;
             case "게임 재시작":
                 SoundManager.Instance.textToSpeech.PlayTTS("RestartGame");
                 Invoke("RestartGame", 2f);
+                break;
+            case "마커 다운로드":
+                if(!isGameStart){
+                    onMarkerDownload = true;
+                    SoundManager.Instance.textToSpeech.PlayTTS("MarkerDown");
+                }
+                else{
+                    logText.text = "게임 도중 실행할 수 없습니다.";
+                    Invoke("HelpLogText", 2f);
+                }
+                break;
+            case "예":
+                if(onMarkerDownload)
+                    Application.OpenURL("https://drive.google.com/file/d/17hSE8wAjlWecN9X243PcrHSfO61GYnyk/view?usp=sharing");
+                break;
+            case "아니요":
+                if(onMarkerDownload)
+                    onMarkerDownload = false;
                 break;
             default:
                 logText.text = "잘못된 명령입니다.";
@@ -98,8 +119,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void HelpLogText(){
-        logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '던져', '게임 재시작', '어플 종료'";
+    private void HelpLogText(){   //invoke
+        logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '던져', '게임 재시작', '어플 종료'";
+        speechToText.resultText.text = "";
     }
 
     private void RestartGame(){

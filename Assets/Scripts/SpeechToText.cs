@@ -30,7 +30,7 @@ public class SpeechToText : MonoBehaviour
         }
 
         recordingIcon.gameObject.SetActive(false);
-        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '던져', '게임 재시작', '어플 종료'";
+        ShowCommandList();
     }
 
     public void OnFinalResult(string result){
@@ -84,8 +84,8 @@ public class SpeechToText : MonoBehaviour
         resultText.text = "";
     }
 
-    private void ShowCommandList(){
-        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '어플 종료'";
+    private void ShowCommandList(){   //invoke
+        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '던져', '게임 재시작', '어플 종료'";
         resultText.text = "";
     }
 }
