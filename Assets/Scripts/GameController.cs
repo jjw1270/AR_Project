@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
 
     public GameObject dice;
     private Rigidbody diceRb;
-    private float throwForce = 30f;
-    private float rotateForce = 9000f;
+    private float throwForce = 10f;
+    private float rotateForce = 90000f;
     [SerializeField]GetDiceNumber getDiceNumber;
     public bool isThrowingDice;
     [SerializeField]ParticleSystem diceParticle;
@@ -73,10 +73,10 @@ public class GameController : MonoBehaviour
 
     public void ThrowDice(){
         isThrowingDice = true;
-        Vector3 randomDirection = new Vector3(Random.Range(-1,1f), 1, Random.Range(-1,1f));
+        SoundManager.Instance.PlaySFXSound("Dice");
         Vector3 randomRotation = new Vector3(Random.Range(-1,1f), Random.Range(-1,1f), Random.Range(-1,1f));
-        diceRb.AddForce(randomDirection * throwForce, ForceMode.Impulse);
-        diceRb.AddTorque(randomRotation * rotateForce, ForceMode.Impulse);
+        diceRb.AddForce(Vector3.up * throwForce, ForceMode.Impulse);
+        diceRb.AddTorque(randomRotation * rotateForce * 1000, ForceMode.Impulse);
 
         StartCoroutine(DiceNumber());
     }
@@ -97,6 +97,7 @@ public class GameController : MonoBehaviour
     public void ScoreCtrl(bool card1, int count){   //점수를 얻는 카드, 점수
         if(count < 1 || count > 6){  //오류처리
             isThrowingDice = false;
+            SoundManager.Instance.textToSpeech.PlayTTS("DiceAgain");
             GameManager.Instance.logText.text = "주사위를 다시 굴려주세요";
             return;
         }
@@ -120,12 +121,16 @@ public class GameController : MonoBehaviour
                                   new Vector3(halfPos.x+Random.Range(1f,5f), halfPos.y+Random.Range(1f,5f), halfPos.z+Random.Range(1f,5f)),
                                   thisCard.targetPos.position};
 
+            SoundManager.Instance.PlaySFXSound("SphereMove");
             thisSphere.rb.DOPath(movePath, 0.8f, PathType.CatmullRom, PathMode.Full3D);
             thisSphere.rderer.material.color = card1 ? white : black;
             
             thisCard.scoreList.Add(thisSphere.gameObject);
             thisSphere.tf.parent = thisCard.score.transform;
             enemyCard.scoreList.RemoveAt(0);
+
+            // .text = card[0].scoreList.Count.ToString();
+            // .text = card[1].scoreList.Count.ToString();
 
             yield return new WaitForSeconds(0.4f);
         }
@@ -142,6 +147,7 @@ public class GameController : MonoBehaviour
             Invoke("ShowThrowPanel", 0.5f);
             return;
         }
+        SoundManager.Instance.PlaySFXSound("GameOver");
         if(card1TotalScore == totalSphereCount){
             card[0].winParticle.Play();
             StartCoroutine(BlinkText(turnCard1Panel, textCard1, 8, "승리!", 3f));

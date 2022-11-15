@@ -30,7 +30,7 @@ public class SpeechToText : MonoBehaviour
         }
 
         recordingIcon.gameObject.SetActive(false);
-        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '굴려', '게임 재시작', '어플 종료'";
+        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '던져', '게임 재시작', '어플 종료'";
     }
 
     public void OnFinalResult(string result){
@@ -77,23 +77,11 @@ public class SpeechToText : MonoBehaviour
 
     public void StartRecording() {
         if(SpeechRecognizer.IsRecording()){
-#if UNITY_IOS && !UNITY_EDITOR
-            // SpeechRecognizer.StopIfRecording();
-            // startRecordingButton.GetComponentInChildren<Text>().text = "Stopping";
-            // startRecordingButton.enabled = false;
-#elif UNITY_ANDROID && !UNITY_EDITOR
-            //SpeechRecognizer.StopIfRecording();
-
-            //SpeechRecognizer.StartRecording(true);
-            //recordingIcon.gameObject.SetActive(true);
-            //resultText.text = "......";
-#endif
+            return;
         }
-        else{
-            SpeechRecognizer.StartRecording(true);
-            recordingIcon.gameObject.SetActive(true);
-            resultText.text = "";
-        }
+        SpeechRecognizer.StartRecording(true);
+        recordingIcon.gameObject.SetActive(true);
+        resultText.text = "";
     }
 
     private void ShowCommandList(){

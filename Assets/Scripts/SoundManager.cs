@@ -11,7 +11,7 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource bgmPlayer;
     private AudioSource sfxPlayer;
 
-    public float masterVolumeBGM = 1f;
+    public float masterVolumeBGM = 0.8f;
     public float masterVolumeSFX = 1f;
 
     [SerializeField]
