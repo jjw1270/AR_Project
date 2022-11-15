@@ -84,7 +84,7 @@ public class GameManager : Singleton<GameManager>
                 if(!isGameStart){
                     onMarkerDownload = true;
                     SoundManager.Instance.textToSpeech.PlayTTS("MarkerDown");
-                    Invoke("MarkerRecording", 1f);
+                    Invoke("MarkerRecording", 2f);
                 }
                 else{
                     logText.text = "게임 도중 실행할 수 없습니다.";
@@ -111,8 +111,12 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void MarkerRecording(){
+    private void MarkerRecording(){  //invoke
         speechToText.StartRecording();
+    }
+
+    public void MarkerDownBtn(){
+        Application.OpenURL("https://drive.google.com/file/d/17hSE8wAjlWecN9X243PcrHSfO61GYnyk/view?usp=sharing");
     }
 
     private void Update() {
