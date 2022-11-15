@@ -57,7 +57,9 @@ public class GameManager : Singleton<GameManager>
                 SoundManager.Instance.textToSpeech.PlayTTS("QuitApp");
                 Invoke("QuitApplication", 2f);
                 break;
-            case "던져":
+            case "주사위 굴려":
+            case "굴려":
+            case "주사위":
                 if(isGameStart){
                     if(!gameController.isThrowingDice){
                         gameController.ThrowDice();
@@ -73,14 +75,16 @@ public class GameManager : Singleton<GameManager>
                     Invoke("HelpLogText", 2f);
                 }
                 break;
-            case "게임 재시작":
-                SoundManager.Instance.textToSpeech.PlayTTS("RestartGame");
-                Invoke("RestartGame", 2f);
-                break;
+            // case "게임 재시작":   //초기화 해줘야함. 안할래
+            //     SoundManager.Instance.textToSpeech.PlayTTS("RestartGame");
+            //     Invoke("RestartGame", 2f);
+            //     break;
             case "마커 다운로드":
+            case "마크 다운로드":
                 if(!isGameStart){
                     onMarkerDownload = true;
                     SoundManager.Instance.textToSpeech.PlayTTS("MarkerDown");
+                    Invoke("MarkerRecording", 1f);
                 }
                 else{
                     logText.text = "게임 도중 실행할 수 없습니다.";
@@ -88,10 +92,15 @@ public class GameManager : Singleton<GameManager>
                 }
                 break;
             case "예":
+            case "네":
+            case "응":
+            case "어":
                 if(onMarkerDownload)
                     Application.OpenURL("https://drive.google.com/file/d/17hSE8wAjlWecN9X243PcrHSfO61GYnyk/view?usp=sharing");
                 break;
             case "아니요":
+            case "아니":
+            case "싫어":
                 if(onMarkerDownload)
                     onMarkerDownload = false;
                 break;
@@ -100,6 +109,10 @@ public class GameManager : Singleton<GameManager>
                 Invoke("HelpLogText", 2f);
                 break;
         }
+    }
+
+    private void MarkerRecording(){
+        speechToText.StartRecording();
     }
 
     private void Update() {
@@ -120,7 +133,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void HelpLogText(){   //invoke
-        logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '던져', '게임 재시작', '어플 종료'";
+        logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '주사위 굴려', '어플 종료'";
         speechToText.resultText.text = "";
     }
 

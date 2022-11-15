@@ -85,7 +85,7 @@ public class SpeechToText : MonoBehaviour
     }
 
     private void ShowCommandList(){   //invoke
-        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '던져', '게임 재시작', '어플 종료'";
+        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '마커 다운로드', '게임 시작', '주사위 굴려', '어플 종료'";
         resultText.text = "";
     }
 }
