@@ -30,7 +30,7 @@ public class SpeechToText : MonoBehaviour
         }
 
         recordingIcon.gameObject.SetActive(false);
-        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '게임 재시작', '게임 종료', '어플 종료'";
+        GameManager.Instance.logText.text = "음성인식 명령어 : '게임 설명', '게임 시작', '굴려', '게임 재시작', '어플 종료'";
     }
 
     public void OnFinalResult(string result){
